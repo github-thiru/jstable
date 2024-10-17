@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Example</title>
+  <style>
+    table {
+      width: 50%;
+      border-collapse:collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Upper</th>
+        <th>age</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+
+  <script>
+    let arr = [{name:"thiru",age:10},{name:"balu",age:20},{name:"karuna",age:30}
+    ];
+    
+    let tableBody = document.getElementById("tableBody");
+
+    for (let i = 0; i < arr.length; i++) {
+     
+      let tr = document.createElement('tr');
+
+//first 
+      let tdSno = document.createElement('td');
+      tdSno.innerText = i+1; 
+
+ //second
+      let tdName = document.createElement('td');
+      tdName.innerText = arr[i].name; 
+      tr.appendChild(tdName);
+//third
+      let tdcount = document.createElement('td');
+      tdcount.innerText =arr[i].name.toUpperCase(); 
+      tr.appendChild(tdcount);
+/// fourth
+      let lower = document.createElement('td');
+      lower.innerText =arr[i].age; 
+      tr.appendChild(lower); 
+
+/// append the table body     
+      tableBody.appendChild(tr);
+    }
+  </script>
+
+ 
+</body>
+</html>
